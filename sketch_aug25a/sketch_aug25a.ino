@@ -1,7 +1,7 @@
 int buttonState = HIGH;  // Initialize with HIGH (because of INPUT_PULLUP)
 int lastButtonState = HIGH; // Initialize with HIGH as well
 unsigned long lastDebounceTime = 0;  // The last time the output was toggled
-unsigned long debounceDelay = 50;    // The debounce time (50 ms is usually sufficient)
+unsigned long debounceDelay = 20;    // The debounce time (50 ms is usually sufficient)
 
 void setup() {
   Serial.begin(74880);
@@ -25,8 +25,7 @@ void loop() {
       buttonState = reading;
 
       // Print the button state when it has changed after debounce
-      Serial.print(buttonState);
-      Serial.print("\n");
+      Serial.println(buttonState);
     }
   }
 
